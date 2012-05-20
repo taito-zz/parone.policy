@@ -1,0 +1,17 @@
+<configure
+  i18n_domain="parone.policy"
+  xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+  xmlns="http://namespaces.zope.org/zope"
+  >
+
+  <genericsetup:upgradeStep
+    description=""
+    destination="1"
+    handler="parone.policy.upgrades.upgrade_0_to_1"
+    profile="parone.policy:default"
+    sortkey="1"
+    source="0"
+    title="Reinstall addons."
+    />
+
+</configure>

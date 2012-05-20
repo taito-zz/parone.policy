@@ -15,5 +15,7 @@
     title="Parone Site Policy"
     />
 
+  <include file="upgrades.zcml"/>
+
 </configure>
 
