@@ -3,7 +3,7 @@ from Products.CMFCore.utils import getToolByName
 import logging
 
 
-PROFILE_ID = 'profile-hoshuko.helsinki:default'
+PROFILE_ID = 'profile-parone.policy:default'
 
 
 def upgrade_0_to_1(context, logger=None):
