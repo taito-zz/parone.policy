@@ -1,0 +1,9 @@
+<metadata>
+  <description>This is the profile description</description>
+  <version>1</version>
+  <dependencies>
+    <dependency>profile-parone.theme:default</dependency>
+    <dependency>profile-collective.contentleadimage:default</dependency>
+    <dependency>profile-Products.LinguaPlone:LinguaPlone</dependency>
+  </dependencies>
+</metadata>
