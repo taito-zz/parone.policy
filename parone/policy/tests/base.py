@@ -14,7 +14,7 @@ class ParonePolicyLayer(PloneSandboxLayer):
     def setUpZope(self, app, configurationContext):
         """Set up Zope."""
 
-        # Required by Products.CMFPlone:plone-content to setup defaul plone site.
+        # Required by Products.CMFPlone:plone-content for default plone site.
         z2.installProduct(app, 'Products.PythonScripts')
 
         # Load ZCML
@@ -25,10 +25,10 @@ class ParonePolicyLayer(PloneSandboxLayer):
         """Set up Plone."""
         # Install into Plone site using portal_setup
 
-        # Installs all the Plone stuff. Workflows etc. to setup defaul plone site.
+        # Installs all the Plone stuff.
         self.applyProfile(portal, 'Products.CMFPlone:plone')
 
-        # Install portal content. Including the Members folder! to setup defaul plone site.
+        # Install portal content. Including the Members folder!
         self.applyProfile(portal, 'Products.CMFPlone:plone-content')
 
         self.applyProfile(portal, 'parone.policy:default')

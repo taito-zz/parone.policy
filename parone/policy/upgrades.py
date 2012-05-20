@@ -7,7 +7,7 @@ PROFILE_ID = 'profile-hoshuko.helsinki:default'
 
 
 def upgrade_0_to_1(context, logger=None):
-    """Reimport mailhost.xml and propertiestool.xml."""
+    """Reinstall addons."""
     if logger is None:
         # Called as upgrade step: define our own logger.
         logger = logging.getLogger(__name__)

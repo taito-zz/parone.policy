@@ -7,7 +7,6 @@ setup(
     version='0.3',
     description="Parone Policy",
     long_description="",
-    # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
         "Framework :: Plone",
         "Framework :: Plone :: 4.2",

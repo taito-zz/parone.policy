@@ -17,7 +17,9 @@ class TestSetup(IntegrationTestCase):
 
     def test_collective_contentleadimage_installed(self):
         installer = getToolByName(self.portal, 'portal_quickinstaller')
-        self.failUnless(installer.isProductInstalled('collective.contentleadimage'))
+        self.failUnless(
+            installer.isProductInstalled('collective.contentleadimage')
+        )
 
     def test_LinguaPlone_installed(self):
         installer = getToolByName(self.portal, 'portal_quickinstaller')
@@ -33,14 +35,27 @@ class TestSetup(IntegrationTestCase):
     def test_available_languages(self):
         languages = getToolByName(self.portal, 'portal_languages')
         self.assertEquals('fi', languages.getDefaultLanguage())
-        self.assertEqual([('en', u'English'), ('fi', u'Finnish')], languages.listSupportedLanguages())
+        self.assertEqual(
+            [('en', u'English'), ('fi', u'Finnish')],
+            languages.listSupportedLanguages()
+        )
 
     def test_default_language(self):
         portal_properties = getToolByName(self.portal, 'portal_properties')
         site_properties = portal_properties.get('site_properties')
-        self.assertEquals('fi', site_properties.getProperty('default_language'))
+        self.assertEquals(
+            'fi',
+            site_properties.getProperty('default_language')
+        )
 
     ## portal_languages.xml
     def test_use_content_negotiation(self):
         languages = getToolByName(self.portal, 'portal_languages')
         self.failUnless(not languages.use_content_negotiation)
+
+    def test_metadata__version(self):
+        setup = getToolByName(self.portal, 'portal_setup')
+        self.assertEqual(
+            setup.getVersionForProfile('profile-parone.policy:default'),
+            u'1'
+        )

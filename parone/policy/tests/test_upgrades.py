@@ -13,5 +13,18 @@ class TestCase(IntegrationTestCase):
 
     def test_upgrades_0_to_1(self):
 
+        installer = getToolByName(self.portal, 'portal_quickinstaller')
+        products = [
+            'LinguaPlone',
+            'collective.contentleadimage',
+            'parone.theme',
+        ]
+        installer.uninstallProducts(products)
+        for product in products:
+            self.failIf(installer.isProductInstalled(product))
+
         from parone.policy.upgrades import upgrade_0_to_1
         upgrade_0_to_1(self.portal)
+
+        for product in products:
+            self.failUnless(installer.isProductInstalled(product))
